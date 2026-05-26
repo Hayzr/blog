@@ -2,5 +2,10 @@ title: My Blog
 description: Just the start, but not the end.
 theme: minima
 
+show_excerpts: true
+excerpt_separator: <!--more-->
+
 minima:
   skin: classic
+  header_pages:
+    - about.md
