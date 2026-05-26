@@ -1,0 +1,202 @@
+---
+---
+@import "minima";
+
+/* ── Design tokens ── */
+:root {
+  --bg:          #FAFAF5;
+  --text:        #252525;
+  --header-bg:   #FAFAF5;
+  --header-text: #252525;
+  --accent:      #2D6A4F;
+  --link:        #2D6A4F;
+  --border:      #E2DDD5;
+  --muted:       #7C8490;
+  --code-bg:     #F0EDE6;
+  --font-head:   'Playfair Display', Georgia, serif;
+  --font-body:   'Lora', Georgia, serif;
+}
+
+[data-theme="dark"] {
+  --bg:          #161618;
+  --text:        #EDECEA;
+  --header-bg:   #111113;
+  --header-text: #EDECEA;
+  --accent:      #52B788;
+  --link:        #52B788;
+  --border:      #2A2A2D;
+  --muted:       #8896A7;
+  --code-bg:     #1E1E20;
+}
+
+/* ── Base ── */
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 18px;
+  line-height: 1.85;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+p { color: var(--text); }
+
+a             { color: var(--link); }
+a:visited     { color: var(--link); }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-head);
+  color: var(--text);
+  line-height: 1.25;
+}
+
+/* ── Header ── */
+.site-header {
+  background-color: var(--header-bg);
+  border-bottom: 1px solid var(--border);
+  border-top: 3px solid var(--accent);
+  padding: 0.75rem 0;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.site-title,
+.site-title:visited {
+  font-family: var(--font-head);
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--header-text);
+  letter-spacing: -0.5px;
+}
+
+.site-title:hover { color: var(--accent); text-decoration: none; }
+
+.site-nav .page-link       { color: var(--header-text); font-family: var(--font-body); font-size: 0.95rem; }
+.site-nav .page-link:hover { color: var(--accent); text-decoration: none; }
+
+@media screen and (max-width: 600px) {
+  .site-nav {
+    background-color: var(--header-bg);
+    border: 1px solid var(--border);
+  }
+  .site-nav .page-link { color: var(--header-text); }
+}
+
+/* ── Theme toggle ── */
+.theme-toggle {
+  background: none;
+  border: 1.5px solid var(--border);
+  border-radius: 20px;
+  color: var(--header-text);
+  cursor: pointer;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  padding: 0.2rem 0.85rem;
+  margin-left: 0.75rem;
+  vertical-align: middle;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.theme-toggle:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* ── Home page post list ── */
+.post-list {
+  margin-left: 0;
+  padding-left: 0;
+}
+
+.post-list > li {
+  list-style: none;
+  border-bottom: 1px solid var(--border);
+  padding: 2rem 0;
+  margin: 0;
+}
+
+.post-list > li:first-child { padding-top: 0; }
+
+.post-list-heading {
+  font-family: var(--font-head);
+  color: var(--muted);
+  font-size: 0.85rem;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+}
+
+.post-meta {
+  color: var(--muted);
+  font-size: 0.85rem;
+  display: block;
+  margin-bottom: 0.4rem;
+}
+
+.post-link {
+  font-family: var(--font-head);
+  font-size: 1.65rem;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.2;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.post-link:visited { color: var(--text); }
+.post-link:hover   { color: var(--accent); text-decoration: none; }
+
+/* excerpt */
+.post-list > li > p {
+  color: var(--muted);
+  font-size: 1rem;
+  margin: 0;
+  line-height: 1.65;
+}
+
+/* ── Post / Page content ── */
+.page-content         { background-color: var(--bg); }
+.page-content .wrapper { max-width: 720px; }
+
+.post-header .post-title {
+  font-family: var(--font-head);
+  font-size: 2.4rem;
+  color: var(--text);
+  line-height: 1.2;
+}
+
+.post-content p,
+.page-content p { color: var(--text); }
+
+.post-content h2,
+.post-content h3 { margin-top: 2rem; }
+
+blockquote {
+  border-left: 3px solid var(--accent);
+  color: var(--muted);
+  font-style: italic;
+  padding-left: 1.25rem;
+}
+
+pre, code {
+  background-color: var(--code-bg);
+  border: 1px solid var(--border);
+  font-size: 0.875rem;
+}
+
+hr { border-color: var(--border); }
+
+/* ── Footer ── */
+.site-footer {
+  background-color: var(--bg);
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 0.875rem;
+}
+
+.footer-col-wrapper { color: var(--muted); }
