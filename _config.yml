@@ -1,0 +1,6 @@
+title: My Blog
+description: Just the start, but not the end.
+theme: minima
+
+minima:
+  skin: classic
